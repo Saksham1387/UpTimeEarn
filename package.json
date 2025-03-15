@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "UpTimeEarn",
   "private": true,
   "scripts": {
     "build": "turbo run build",
