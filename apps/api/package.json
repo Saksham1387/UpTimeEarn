@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "module": ".",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "db": "*"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "cors": "^2.8.5",
+    "db": "*",
+    "express": "^4.21.2",
+    "zod": "^3.24.2"
+  }
+}
