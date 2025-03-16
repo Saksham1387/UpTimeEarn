@@ -19,8 +19,10 @@ interface Tick {
 export function useWebsites() {
   const { getToken } = useAuth();
   const [websites, setWebsites] = useState<Website[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getWebsites = async () => {
+    setIsLoading(true);
     const token = await getToken();
     const res = await axios.get(`${BACKEND_URL}/api/v1/website`, {
       headers: {
@@ -28,6 +30,7 @@ export function useWebsites() {
       },
     });
     setWebsites(res.data.data);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -41,5 +44,5 @@ export function useWebsites() {
     return () => clearInterval(interval);
   }, []);
 
-  return  {websites, getWebsites};
+  return  {websites, getWebsites, isLoading};
 }

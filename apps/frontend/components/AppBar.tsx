@@ -38,12 +38,13 @@ export const AppBar = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-
-            <ModeToggle/>
+          <ModeToggle />
           <SignedOut>
-            <button className="bg-emerald-500 hover:bg-emerald-600 px-6 py-2 rounded-lg font-medium transition-colors">
-              Get Started
-            </button>
+            <SignInButton>
+              <button className="bg-emerald-500 hover:bg-emerald-600 px-6 py-2 rounded-lg font-medium transition-colors">
+                Get Started
+              </button>
+            </SignInButton>
           </SignedOut>
           <SignedIn>
             <UserButton />
