@@ -1,10 +1,12 @@
 import express, { json } from "express";
-import { authMiddleware } from "./middleware";
-import { prisma } from "db/prisma";
 
+import { prisma } from "db/prisma";
+import cors from "cors";
+import { authMiddleware } from "./middleware";
 const app = express();
 
 app.use(json());
+app.use(cors());
 
 app.post("/api/v1/website", authMiddleware, async (req, res) => {
   const userId = req.userId!;

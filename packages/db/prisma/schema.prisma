@@ -30,6 +30,7 @@ model Website {
 model Validator {
   id        String        @unique @default(uuid())
   publicKey String
+  pendingPayouts Int @default(0)
   ip        String
   location  String
   ticks     WebsiteTick[]
@@ -38,12 +39,12 @@ model Validator {
 model WebsiteTick {
   id          String        @unique @default(uuid())
   websiteId   String
-  validatorId String
+  validatorId String?
   createdAt   DateTime
   status      WebsiteStatus @default(GOOD)
   latency     Float
   website     Website       @relation(fields: [websiteId], references: [id])
-  validator   Validator     @relation(fields: [validatorId], references: [id])
+  validator   Validator?     @relation(fields: [validatorId], references: [id])
 }
 
 enum WebsiteStatus {

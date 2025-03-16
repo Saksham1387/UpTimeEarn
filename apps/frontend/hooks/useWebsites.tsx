@@ -27,7 +27,7 @@ export function useWebsites() {
         Authorization: token,
       },
     });
-    return res.data.data;
+    setWebsites(res.data.data);
   };
 
   useEffect(() => {
@@ -40,4 +40,6 @@ export function useWebsites() {
     );
     return () => clearInterval(interval);
   }, []);
+
+  return  {websites, getWebsites};
 }

@@ -1,15 +1,12 @@
 {
-  "name": "db",
-  "module": ".",
+  "name": "common",
+  "module": "index.ts",
   "type": "module",
-  "prisma":{
-    "seed":"./seed.ts"
+  "exports":{
+    "./types":"./index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
-  },
-  "exports":{
-    "./prisma":"./src/index.ts"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
